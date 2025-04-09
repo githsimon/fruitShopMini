@@ -1,0 +1,85 @@
+/**app.wxss**/
+/* 全局样式 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+/* 主题色定义 */
+:root {
+  --primary-color: #FF6B6B;
+  --secondary-color: #8BC34A;
+  --background-color: #FFFFFF;
+  --text-color: #333333;
+  --text-secondary: #999999;
+}
+
+/* 通用样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background-color: #FF6B6B;
+  color: white;
+  border-radius: 8rpx;
+  padding: 16rpx 32rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+/* 价格样式 */
+.price {
+  color: #FF6B6B;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.price-original {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 24rpx;
+  margin-left: 8rpx;
+}

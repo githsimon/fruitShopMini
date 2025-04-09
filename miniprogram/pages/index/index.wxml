@@ -1,0 +1,142 @@
+<!-- index.wxml -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar">
+    <view class="logo">
+      <image class="logo-icon" src="/images/logo.png" mode="aspectFit"></image>
+      <text class="logo-text">水果商城</text>
+    </view>
+    <view class="search-box" bindtap="goToSearch">
+      <icon type="search" size="14" color="#999"></icon>
+      <text class="search-placeholder">搜索新鲜水果…</text>
+    </view>
+    <view class="notification" bindtap="goToNotification">
+      <image class="notification-icon" src="/images/notification.png" mode="aspectFit"></image>
+      <view class="notification-dot" wx:if="{{hasUnread}}"></view>
+    </view>
+  </view>
+
+  <!-- 下拉刷新区域 -->
+  <scroll-view 
+    scroll-y="true" 
+    class="scroll-container"
+    refresher-enabled="{{true}}"
+    refresher-threshold="80"
+    refresher-default-style="black"
+    refresher-background="#f8f8f8"
+    refresher-triggered="{{isRefreshing}}"
+    bindrefresherpulling="onPulling"
+    bindrefresherrefresh="onRefresh"
+    bindrefresherrestore="onRestore"
+    bindrefresherabort="onAbort"
+    bindscrolltolower="loadMore">
+
+    <!-- Banner轮播图 -->
+    <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="true">
+      <block wx:for="{{banners}}" wx:key="id">
+        <swiper-item bindtap="onBannerTap" data-item="{{item}}">
+          <image src="{{item.imageUrl}}" class="banner-image" mode="aspectFill"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!-- 公告跑马灯 -->
+    <view class="announcement" bindtap="showFullAnnouncement">
+      <image class="announcement-icon" src="/images/announcement.png" mode="aspectFit"></image>
+      <view class="announcement-content">
+        <text class="announcement-text {{announcementHighlight ? 'highlight' : ''}}">{{announcementText}}</text>
+      </view>
+    </view>
+
+    <!-- 分类入口 -->
+    <view class="category-grid">
+      <block wx:for="{{categories}}" wx:key="id">
+        <view class="category-item" bindtap="goToCategory" data-id="{{item.id}}" bindlongpress="previewCategory" data-id="{{item.id}}">
+          <image class="category-icon" src="{{item.iconUrl}}" mode="aspectFit"></image>
+          <text class="category-name">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+
+    <!-- 商品推荐区块 -->
+    <view class="product-section">
+      <view class="section-header">
+        <text class="section-title">热销推荐</text>
+        <text class="view-more" bindtap="viewMoreHotProducts">查看更多</text>
+      </view>
+      
+      <!-- 瀑布流商品列表 -->
+      <view class="product-waterfall">
+        <view class="waterfall-column">
+          <block wx:for="{{leftProducts}}" wx:key="id">
+            <view class="product-card" bindtap="goToProduct" data-id="{{item.id}}" bindlongpress="quickAddToCart" data-id="{{item.id}}">
+              <image class="product-image" src="{{item.imageUrl}}" mode="aspectFill" lazy-load="true"></image>
+              <view class="product-info">
+                <text class="product-name text-ellipsis">{{item.name}}</text>
+                <view class="product-price-row">
+                  <text class="price">¥{{item.price}}</text>
+                  <text class="price-original" wx:if="{{item.originalPrice}}">¥{{item.originalPrice}}</text>
+                </view>
+                <view class="product-tag" wx:if="{{item.tag}}">{{item.tag}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+        
+        <view class="waterfall-column">
+          <block wx:for="{{rightProducts}}" wx:key="id">
+            <view class="product-card" bindtap="goToProduct" data-id="{{item.id}}" bindlongpress="quickAddToCart" data-id="{{item.id}}">
+              <image class="product-image" src="{{item.imageUrl}}" mode="aspectFill" lazy-load="true"></image>
+              <view class="product-info">
+                <text class="product-name text-ellipsis">{{item.name}}</text>
+                <view class="product-price-row">
+                  <text class="price">¥{{item.price}}</text>
+                  <text class="price-original" wx:if="{{item.originalPrice}}">¥{{item.originalPrice}}</text>
+                </view>
+                <view class="product-tag" wx:if="{{item.tag}}">{{item.tag}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+      
+      <!-- 加载更多 -->
+      <view class="loading-more" wx:if="{{isLoading}}">
+        <text>正在加载...</text>
+      </view>
+      <view class="no-more" wx:if="{{noMoreProducts}}">
+        <text>已加载全部商品</text>
+      </view>
+    </view>
+  </scroll-view>
+  
+  <!-- 网络错误提示 -->
+  <view class="network-error" wx:if="{{networkError}}" bindtap="retryLoading">
+    <image class="error-icon" src="/images/network-error.png" mode="aspectFit"></image>
+    <text class="error-text">网络连接失败，点击重试</text>
+  </view>
+  
+  <!-- 新人礼包弹窗 -->
+  <view class="welcome-modal" wx:if="{{showWelcomeModal}}">
+    <view class="modal-content">
+      <image class="close-icon" src="/images/close.png" mode="aspectFit" bindtap="closeWelcomeModal"></image>
+      <image class="gift-image" src="/images/new-user-gift.png" mode="aspectFit"></image>
+      <text class="gift-title">新人专享礼包</text>
+      <text class="gift-desc">首单立减10元，更有惊喜好礼相送</text>
+      <button class="gift-btn" bindtap="claimGift">立即领取</button>
+    </view>
+  </view>
+  
+  <!-- 公告详情弹窗 -->
+  <view class="announcement-modal" wx:if="{{showAnnouncementModal}}">
+    <view class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">公告详情</text>
+        <image class="close-icon" src="/images/close.png" mode="aspectFit" bindtap="closeAnnouncementModal"></image>
+      </view>
+      <scroll-view scroll-y="true" class="modal-body">
+        <text class="announcement-detail">{{announcementDetail}}</text>
+      </scroll-view>
+    </view>
+  </view>
+</view>

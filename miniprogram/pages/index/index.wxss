@@ -1,0 +1,382 @@
+/* index.wxss */
+
+/* u9876u90e8u5bfcu822au680f */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  height: 80rpx;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.logo-text {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #F5F5F5;
+  border-radius: 30rpx;
+  padding: 10rpx 20rpx;
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.search-placeholder {
+  color: #999;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+
+.notification {
+  position: relative;
+}
+
+.notification-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16rpx;
+  height: 16rpx;
+  background-color: #FF6B6B;
+  border-radius: 50%;
+}
+
+/* u6edau52a8u5bb9u5668 */
+.scroll-container {
+  height: calc(100vh - 120rpx);
+  background-color: #f8f8f8;
+}
+
+/* Banneru8f6eu64adu56fe */
+.banner {
+  width: 100%;
+  height: 360rpx;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* u516cu544au8dd1u9a6cu706f */
+.announcement {
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+}
+
+.announcement-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.announcement-content {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.announcement-text {
+  font-size: 28rpx;
+  color: #666;
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+.announcement-text.highlight {
+  color: #FF6B6B;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* u5206u7c7bu5165u53e3 */
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  padding: 20rpx 0;
+  transition: transform 0.2s;
+}
+
+.category-item:active {
+  transform: scale(1.1);
+}
+
+.category-icon {
+  width: 64rpx;
+  height: 64rpx;
+  margin-bottom: 10rpx;
+}
+
+.category-name {
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* u5546u54c1u63a8u8350u533au5757 */
+.product-section {
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.view-more {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* u7011u5e03u6d41u5546u54c1u5217u8868 */
+.product-waterfall {
+  display: flex;
+  justify-content: space-between;
+}
+
+.waterfall-column {
+  width: calc(50% - 10rpx);
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  background-color: #f5f5f5;
+}
+
+.product-info {
+  padding: 16rpx;
+  position: relative;
+}
+
+.product-name {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  color: #FF6B6B;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.price-original {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 24rpx;
+  margin-left: 8rpx;
+}
+
+.product-tag {
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  background-color: #FF6B6B;
+  color: #fff;
+  font-size: 20rpx;
+  padding: 4rpx 8rpx;
+  border-radius: 4rpx;
+}
+
+/* u52a0u8f7du66f4u591a */
+.loading-more, .no-more {
+  text-align: center;
+  padding: 20rpx 0;
+  color: #999;
+  font-size: 24rpx;
+}
+
+/* u7f51u7edcu9519u8befu63d0u793a */
+.network-error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.error-icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+}
+
+.error-text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* u65b0u4ebau793cu5305u5f39u7a97 */
+.welcome-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modal-content {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 40rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-icon {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.gift-image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+
+.gift-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.gift-desc {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.gift-btn {
+  background-color: #FF6B6B;
+  color: #fff;
+  border-radius: 40rpx;
+  padding: 16rpx 60rpx;
+  font-size: 32rpx;
+  border: none;
+}
+
+/* u516cu544au8be6u60c5u5f39u7a97 */
+.announcement-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+  margin-bottom: 20rpx;
+  width: 100%;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.modal-body {
+  max-height: 60vh;
+  width: 100%;
+}
+
+.announcement-detail {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+}

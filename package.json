@@ -1,0 +1,18 @@
+{
+  "name": "fruit-shop-mini",
+  "version": "1.0.0",
+  "description": "u7ea2u7ea2u679cu56edu5faeu4fe1u5c0fu7a0bu5e8f",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wechat",
+    "mini-program",
+    "fruit-shop"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}

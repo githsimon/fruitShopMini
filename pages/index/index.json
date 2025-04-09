@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+  },
+  "navigationBarTitleText": "红红果园",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

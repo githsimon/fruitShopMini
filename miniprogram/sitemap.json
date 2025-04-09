@@ -1,0 +1,7 @@
+{
+  "desc": "u5faeu4fe1u5c0fu7a0bu5e8fu7684sitemapu914du7f6e",
+  "rules": [{
+    "action": "allow",
+    "page": "*"
+  }]
+}

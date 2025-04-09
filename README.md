@@ -1,0 +1,72 @@
+# u7ea2u7ea2u679cu56edu5c0fu7a0bu5e8f
+
+u8fd9u662fu4e00u4e2au5faeu4fe1u5c0fu7a0bu5e8fu9879u76eeuff0cu4e3au7528u6237u63d0u4f9bu6c34u679cu8d2du4e70u670du52a1u3002
+
+## u9879u76eeu7ed3u6784
+
+```
+project
+u251cu2500 miniprogram/
+u2502   u251cu2500 pages/          // u9875u9762u6587u4ef6
+u2502   u251cu2500 components/     // u81eau5b9au4e49u7ec4u4ef6
+u2502   u251cu2500 utils/          // u5de5u5177u51fdu6570
+u2502   u251cu2500 images/         // u56feu7247u8d44u6e90
+u2502   u251cu2500 app.js          // u5c0fu7a0bu5e8fu5165u53e3u6587u4ef6
+u2502   u251cu2500 app.json        // u5168u5c40u914du7f6e
+u2502   u251cu2500 app.wxss        // u5168u5c40u6837u5f0f
+u2502   u2514u2500 utils.js        // u5de5u5177u51fdu6570
+u251cu2500 node_modules/     // u4f9du8d56u5305
+u251cu2500 package.json      // u9879u76eeu914du7f6eu6587u4ef6
+u2514u2500 README.md         // u9879u76eeu8bf4u660eu6587u4ef6
+```
+
+## u529fu80fdu7279u70b9
+
+- u9996u9875u5c55u793au6c34u679cu5546u54c1u5217u8868
+- u5206u7c7bu6d4fu89c8u4e0du540cu7c7bu578bu6c34u679c
+- u5546u54c1u8be6u60c5u9875u5c55u793a
+- u8d2du7269u8f66u529fu80fd
+- u4f1au5458u7279u4ef7u4f18u60e0
+
+## u5f00u53d1u73afu5883
+
+- u5faeu4fe1u5f00u53d1u8005u5de5u5177
+- Node.js
+
+## u5f00u59cbu4f7fu7528
+
+1. u514bu9686u9879u76ee
+2. u5728u5faeu4fe1u5f00u53d1u8005u5de5u5177u4e2du6253u5f00u9879u76eeu76eeu5f55
+3. u7f16u8bd1u8fd0u884c
+
+## u9879u76eeu7ed3u6784u8bf4u660e
+
+### pages u76eeu5f55
+
+- `index`: u9996u9875uff0cu5c55u793au70edu95e8u5546u54c1u548cu5206u7c7b
+- `search`: u641cu7d22u9875u9762
+- `category`: u5206u7c7bu9875u9762
+- `product`: u5546u54c1u8be6u60c5u9875
+- `notification`: u6d88u606fu901au77e5u9875u9762
+
+### utils u76eeu5f55
+
+u5305u542bu5e38u7528u5de5u5177u51fdu6570uff1a
+- u683cu5f0fu5316u4ef7u683c
+- u65e5u671fu5904u7406
+- u8282u6d41u548cu9632u6296u51fdu6570
+- u5c01u88c5u7684u5faeu4fe1API
+
+## u8bbeu8ba1u89c4u8303
+
+u9879u76eeu91c7u7528u4ee5u4e0bu8bbeu8ba1u89c4u8303uff1a
+
+- u4e3bu8272u8c03uff1a#FF6B6Buff08u7ea2u8272uff09u548c#8BC34Auff08u7effu8272uff09
+- u5b57u4f53u5927u5c0fuff1au6807u9898 32rpxuff0cu6b63u6587 28rpxuff0cu8f85u52a9u6587u5b57 24rpx
+- u5706u89d2u8bbeu8ba1uff1au5361u7247u548cu6309u94aeu4f7fu7528 8rpx u5706u89d2
+
+## u5f00u53d1u89c4u8303
+
+- u9075u5faau5faeu4fe1u5c0fu7a0bu5e8fu5f00u53d1u89c4u8303
+- u4f7fu7528 ES6 u8bedu6cd5
+- u91c7u7528u6a21u5757u5316u7ec4u7ec7u4ee3u7801

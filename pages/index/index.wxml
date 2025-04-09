@@ -1,0 +1,170 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 顶部搜索栏 -->
+  <view class="header">
+    <view class="search-bar">
+      <view class="location" bindtap="chooseLocation">
+        <image class="location-icon" src="/images/icon_location.png" mode="aspectFit"></image>
+        <text class="location-text">{{location.name || '当前位置'}}</text>
+        <image class="arrow-icon" src="/images/icon_arrow.png" mode="aspectFit"></image>
+      </view>
+      <view class="search-input-box" style="width: 100%;">
+        <image class="search-icon" src="/images/icon_search.png" mode="aspectFit"></image>
+        <input class="search-input" placeholder="草莓" disabled bindtap="goToSearch" style="width: calc(100% - 120rpx);"></input>
+        <view class="search-btn">搜索</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 内容区域滚动 -->
+  <scroll-view scroll-y class="content-scroll" refresher-enabled="{{true}}" bindrefresherrefresh="onRefresh" bindscrolltolower="loadMore">
+    <!-- 分类导航 -->
+    <view class="category-nav">
+      <view class="category-item">
+        <image class="category-icon" src="/images/icon_fruit.png" mode="aspectFit"></image>
+        <text class="category-text">水果</text>
+      </view>
+      <view class="category-item">
+        <image class="category-icon" src="/images/icon_vegetable.png" mode="aspectFit"></image>
+        <text class="category-text">蔬菜</text>
+      </view>
+      <view class="category-item">
+        <image class="category-icon" src="/images/icon_seafood.png" mode="aspectFit"></image>
+        <text class="category-text">海鲜</text>
+      </view>
+      <view class="category-item">
+        <image class="category-icon" src="/images/icon_meat.png" mode="aspectFit"></image>
+        <text class="category-text">肉禽</text>
+      </view>
+      <view class="category-item">
+        <image class="category-icon" src="/images/icon_more.png" mode="aspectFit"></image>
+        <text class="category-text">更多</text>
+      </view>
+    </view>
+    
+    <!-- 商品列表标题 -->
+    <view class="section-title">
+      <text class="title-text">热卖商品</text>
+      <text class="more-text">更多 ></text>
+    </view>
+    
+    <!-- 商品列表 -->
+    <view class="product-grid">
+      <!-- 第一行 -->
+      <view class="grid-row">
+        <!-- 红宝石草莓 -->
+        <view class="product-item">
+          <view class="product-image-container">
+            <image class="product-image" src="/images/strawberry1.jpg" mode="aspectFill"></image>
+            <view class="product-grade-tag">A级</view>
+          </view>
+          <view class="product-info">
+            <view class="product-name">红宝石草莓（大） 1份/约250g</view>
+            <view class="product-service">清洗易损伤，谨慎选择服务</view>
+            <view class="product-sales">8.89万人回购</view>
+            <view class="product-discount-tag">心享95折</view>
+            <view class="product-price">
+              <text class="price-symbol">¥</text>
+              <text class="price-value">20.45</text>
+              <view class="select-spec" bindtap="selectSpec" data-id="201">选规格</view>
+            </view>
+            <view class="product-original">
+              <text>果粉价</text>
+              <text class="original-price">¥19.95</text>
+            </view>
+          </view>
+        </view>
+        
+        <!-- 粉红初恋草莓 -->
+        <view class="product-item">
+          <view class="product-image-container">
+            <image class="product-image" src="/images/strawberry2.jpg" mode="aspectFill"></image>
+            <view class="product-brand-tag">招牌</view>
+          </view>
+          <view class="product-info">
+            <view class="product-name">珍贵-粉红初恋草莓（大） 1份/约250g</view>
+            <view class="product-discount-tag">心享95折</view>
+            <view class="product-price">
+              <text class="price-symbol">¥</text>
+              <text class="price-value">34.5</text>
+              <view class="select-spec" bindtap="selectSpec" data-id="202">选规格</view>
+            </view>
+            <view class="product-original">
+              <text>果粉价</text>
+              <text class="original-price">¥34</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 第二行 -->
+      <view class="grid-row">
+        <!-- 初恋草莓 -->
+        <view class="product-item">
+          <view class="product-image-container">
+            <image class="product-image" src="/images/strawberry3.jpg" mode="aspectFill"></image>
+            <view class="product-grade-tag">A级</view>
+          </view>
+          <view class="product-info">
+            <view class="product-name">初恋草莓（大） 1份/约250g</view>
+            <view class="product-discount-tag">心享95折</view>
+            <view class="product-price">
+              <text class="price-symbol">¥</text>
+              <text class="price-value">34.5</text>
+              <view class="select-spec" bindtap="selectSpec" data-id="203">选规格</view>
+            </view>
+            <view class="product-original">
+              <text>果粉价</text>
+              <text class="original-price">¥34</text>
+            </view>
+          </view>
+        </view>
+        
+        <!-- 现切红宝石草莓 -->
+        <view class="product-item">
+          <view class="product-image-container">
+            <image class="product-image" src="/images/strawberry4.jpg" mode="aspectFill"></image>
+            <view class="product-tag">【现切】</view>
+            <view class="product-grade-tag">A级</view>
+          </view>
+          <view class="product-info">
+            <view class="product-name">【现切】A级-红宝石草莓（大）</view>
+            <view class="product-service">现切为下单后升切服务，非...</view>
+            <view class="product-sales">8.89万人回购</view>
+            <view class="product-discount-tag">心享95折</view>
+            <view class="product-price">
+              <text class="price-symbol">¥</text>
+              <text class="price-value">23.5</text>
+              <view class="select-spec" bindtap="selectSpec" data-id="204">选规格</view>
+            </view>
+            <view class="product-original">
+              <text>果粉价</text>
+              <text class="original-price">¥22.94</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部导航栏 -->
+  <view class="tab-bar">
+    <view class="tab-item active">
+      <image class="tab-icon" src="/images/icon_home_active.png"></image>
+      <text class="tab-text">首页</text>
+    </view>
+    <view class="tab-item">
+      <image class="tab-icon" src="/images/icon_category.png"></image>
+      <text class="tab-text">分类</text>
+    </view>
+    <view class="tab-item">
+      <image class="tab-icon" src="/images/icon_cart.png"></image>
+      <text class="tab-text">购物车</text>
+      <view class="cart-badge">1</view>
+    </view>
+    <view class="tab-item">
+      <image class="tab-icon" src="/images/icon_profile.png"></image>
+      <text class="tab-text">我的</text>
+    </view>
+  </view>
+</view>
