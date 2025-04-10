@@ -16,6 +16,9 @@
     </view>
   </view>
 
+  <!-- 轮播图区域 - 高度为0 -->
+  <swiper class="empty-banner" style="height: 0; display: none;"></swiper>
+
   <!-- 内容区域滚动 -->
   <scroll-view scroll-y class="content-scroll" refresher-enabled="{{true}}" bindrefresherrefresh="onRefresh" bindscrolltolower="loadMore">
     <!-- 分类导航 -->
